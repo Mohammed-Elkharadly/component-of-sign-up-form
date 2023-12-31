@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+::before,
+::after,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+}
+
+:root {
+  /* Primary Color */
+  --Red: hsl(0, 100%, 74%);
+  --Green: hsl(154, 59%, 51%);
+  --white: hsl(0, 0%, 100%);
+  /* Accent */
+  --Blue: hsl(248, 32%, 49%);
+  /* Neutral */
+  --Dark-Blue: hsl(249, 10%, 26%);
+  --Grayish-Blue: hsl(246, 25%, 77%);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(./images/bg-intro-desktop.png);
+  position: relative;
+  transition: .5s;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--Red);
+  z-index: -1;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  transition: .5s;
+}
+
+.article {
+  width: 50rem;
+  text-align: left;
+}
+
+.article h1 {
+  font-size: 4rem;
+  color: var(--white);
+  margin-bottom: 3rem;
+  line-height: 1.3
+}
+
+.article p {
+  line-height: 1.5;
+  font-size: 1.6rem;
+  color: var(--white);
+}
+
+.btn-container {
+  width: 50rem;
+  margin-bottom: 2rem;
+}
+
+.try {
+  width: 100%;
+  padding: 1.5rem 0;
+  font-size: 1.6rem;
+  border-radius: .7rem;
+  outline: none;
+  border: none;
+  color: var(--white);
+  background-color: var(--Blue);
+  box-shadow: 0 5px 3px hsl(249deg 10% 26% / 50%);
+  cursor: pointer;
+}
+
+.try span {
+  color: var(--Grayish-Blue);
+  font-weight: bold;
+}
+
+.form-container {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: .7rem;
+}
+
+label {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+input {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: .5rem;
+  border: 1px solid var(--Grayish-Blue);
+  font-size: 1.6rem;
+
+}
+
+
+input:focus {
+  outline: none;
+  box-shadow: 0 1px 2px hsla(249, 8%, 46%, 0.5);
+}
+
+input:invalid {
+  border-color: var(--Red);
+}
+
+.image {
+  position: absolute;
+  top: 1.3rem;
+  right: 1.5rem;
+  display: none;
+  cursor: pointer;
+}
+
+.error {
+  color: var(--Red);
+  font: 1.4rem;
+  font-style: italic;
+  text-align: right;
+  padding-top: .8rem;
+}
+
+.btn {
+  padding: 1.5rem 0;
+  font-size: 1.6rem;
+  border-radius: .5rem;
+  outline: none;
+  border: none;
+  color: var(--white);
+  background-color: hsl(154, 96%, 37%);
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 2px hsl(154, 94%, 32%);
+  cursor: pointer;
+  transition: .5s;
+}
+
+.btn:hover {
+  background-color: var(--Green);
+  box-shadow: 0 4px 2px hsla(154, 94%, 25%, 0.747);
+}
+
+.paragraph p {
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--Grayish-Blue);
+  font-weight: bold;
+}
+
+.paragraph p span {
+  color: var(--Red);
+}
+
+.active {
+  display: block;
+}
+
+.wrong {
+  border: 1px solid var(--Red);
+}
+
+.input.wrong::placeholder {
+  color: hsl(0, 100%, 74%);
+}
+
+@media (max-width: 66em) {
+  .section {
+    flex-direction: column;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  .article {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 35em) {
+  .container {
+    background-image: url(./images/bg-intro-mobile.png);
+  }
+
+  .article {
+    width: 35rem;
+  }
+
+  .btn-container {
+    width: 33rem;
+    margin: 2rem auto;
+  }
+
+  .form-container {
+    width: 33rem;
+  }
+}
