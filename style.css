@@ -46,7 +46,7 @@ html {
   z-index: -1;
 }
 
-.section {
+.heading {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,7 +59,7 @@ html {
   text-align: left;
 }
 
-.article h1 {
+.article h2 {
   font-size: 4rem;
   color: var(--white);
   margin-bottom: 3rem;
@@ -107,6 +107,8 @@ html {
 label {
   position: relative;
   margin-bottom: 2rem;
+  font-size: 1.6rem;
+  color: var(--Dark-Blue);
 }
 
 input {
@@ -130,18 +132,18 @@ input:invalid {
 
 .image {
   position: absolute;
-  top: 1.3rem;
-  right: 1.5rem;
+  top: 3.8rem;
+  right: 2rem;
   display: none;
   cursor: pointer;
 }
 
 .error {
+  display: block;
   color: var(--Red);
-  font: 1.4rem;
+  font-size: 1.4rem !important;
   font-style: italic;
   text-align: right;
-  padding-top: .8rem;
 }
 
 .btn {
