@@ -10,9 +10,13 @@ form.addEventListener("submit", validateForm);
 let regEmail =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+  let isValid = false;
 function validateForm(e) {
   e.preventDefault();
   checkFields();
+  if (isValid) {
+    form.submit();
+  }
 }
 
 function checkFields() {
@@ -46,16 +50,25 @@ function checkFields() {
     });
   }, 3000);
 
+  // reset the validation result to true
+  isValid = true;
+
   if (!firstName) {
     errors[0].textContent = "First Name cannot be empty";
     imgs[0].classList.add("active");
     inputs[0].classList.add("wrong");
+
+    // set the validation result to false
+    isValid = false;
   }
 
   if (!lastName) {
     errors[1].textContent = "Last Name cannot be empty";
     imgs[1].classList.add("active");
     inputs[1].classList.add("wrong");
+
+    // set the validation result to false
+    isValid = false;
   }
 
   if (!regEmail.test(email)) {
@@ -63,11 +76,18 @@ function checkFields() {
     imgs[2].classList.add("active");
     inputs[2].classList.add("wrong");
     inputs[2].placeholder = "example@gmail.com";
+
+    // set the validation result to false
+    isValid = false;
   }
 
   if (!password) {
     errors[3].textContent = "Password cannot be empty";
     imgs[3].classList.add("active");
     inputs[3].classList.add("wrong");
+
+    // set the validation result to false
+    isValid = false;  
   }
 }
+
